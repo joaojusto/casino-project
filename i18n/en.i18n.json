@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "Home",
+    "breakdowns": "Breakdowns",
+    "users": "Users",
+    "workOrders": "Work Orders"
+  },
+
+  "login": {
+    "login": "Log In",
+    "userName": "User Name",
+    "password": "Password"
+  }
+}

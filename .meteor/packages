@@ -9,3 +9,4 @@ iron:router
 accounts-password
 fourseven:scss
 poetic:materialize-scss
+tap:i18n
