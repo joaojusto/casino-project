@@ -1,7 +1,12 @@
+var configs = {
+  layoutTemplate: 'mainLayout'
+};
+
 var beforeHooks = {
   isLoggedIn: isLoggedIn
 };
 
+Router.configure(configs);
 Router.onBeforeAction(beforeHooks.isLoggedIn, { except: ['login'] });
 
 function isLoggedIn() {
