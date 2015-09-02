@@ -10,5 +10,10 @@
     "login": "Log In",
     "userName": "User Name",
     "password": "Password"
+  },
+
+  "home": {
+    "breakdowns": "Breakdowns",
+    "workOrders": "Work Orders"
   }
 }

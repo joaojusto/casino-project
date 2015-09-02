@@ -1,7 +1,21 @@
 <template name="home">
-  <div>
-    <p>
-      Hello
-    </p>
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s3"><a class="active" href="#breakdowns">{{_ "home.breakdowns"}}</a></li>
+        <li class="tab col s3"><a href="#workOrders">{{_ "home.workOrders"}}</a></li>
+      </ul>
+    </div>
+
+    <div id="breakdowns" class="col s12">
+      <div class="row">
+        Test 1
+      </div>
+    </div>
+    <div id="workOrders" class="col s12">
+      <div class="row">
+        Test 2
+      </div>
+    </div>
   </div>
 </template>
