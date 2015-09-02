@@ -15,5 +15,12 @@
   "home": {
     "breakdowns": "Breakdowns",
     "workOrders": "Work Orders"
+  },
+
+  "breakdowns": {
+    "machineId": "Machine ID",
+    "description": "Description",
+    "state": "Machine State:",
+    "create": "Create"
   }
 }
