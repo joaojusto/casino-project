@@ -21,7 +21,24 @@ Router.map(function setUpRoutes() {
     path: '/login'
   });
 
+  this.route('logout', {
+    action: function() {
+      Meteor.logout(function(error) {
+        if (!error)
+          Router.go('login');
+      });
+    }
+  });
+
   this.route('home', {
     path: '/'
+  });
+
+  this.route('new_breakdown', {
+    path: '/breakdowns/new'
+  });
+
+  this.route('new_workOrder', {
+    path: '/workorders/new'
   });
 });
