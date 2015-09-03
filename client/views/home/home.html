@@ -1,23 +1,41 @@
 <template name="home">
   <div class="row">
-    <div class="col s12">
-      <ul class="tabs">
-        <li class="tab col s3"><a class="active" href="#breakdowns">{{_ "home.breakdowns"}}</a></li>
-        <li class="tab col s3"><a href="#workOrders">{{_ "home.workOrders"}}</a></li>
-      </ul>
+    <div class="hide-on-large-only">
+      <div class="col s12">
+        <ul class="tabs HomeTabs">
+          <li class="tab col s6"><a class="active" href="#breakdowns">{{_ "home.breakdowns"}}</a></li>
+          <li class="tab col s6"><a href="#workOrders">{{_ "home.workOrders"}}</a></li>
+        </ul>
+      </div>
+
+      <div id="breakdowns" class="col s12 l6">
+        <div class="row"></div>
+        {{> breakdowns}}
+      </div>
+      <div id="workOrders" class="col s12 l6">
+        <div class="row"></div>
+        {{> workOrders}}
+      </div>
     </div>
 
-    <div id="breakdowns" class="col s12">
-      <div class="row"></div>
-      {{> breakdowns}}
-    </div>
-    <div id="workOrders" class="col s12">
-      <div class="row"></div>
-      {{> workOrders}}
+    <div class="hide-on-med-and-down">
+      <ul class="tabs">
+        <li class="tab col l6 active"><a>{{_ "home.breakdowns"}}</a></li>
+        <li class="tab col l6 active"><a>{{_ "home.workOrders"}}</a></li>
+      </ul>
+
+      <div class="col l6">
+        <div class="row"></div>
+        {{> breakdowns}}
+      </div>
+      <div class="col l6">
+        <div class="row"></div>
+        {{> workOrders}}
+      </div>
     </div>
   </div>
 
-  <div class="fixed-action-btn" style="bottom: 45px; right: 45px;">
+  <div class="fixed-action-btn" style="bottom: 10px; right: 10px;">
     <a class="btn-floating btn-large red">
       <i class="large material-icons">add</i>
     </a>

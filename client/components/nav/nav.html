@@ -9,10 +9,14 @@
       <li><a class="dropdown-button" href="#!" data-activates="usersDropdown"><i class="material-icons left">account_circle</i>{{_ "nav.users" }}<i class="material-icons right">arrow_drop_down</i></a></li>
     </ul>
     <ul class="side-nav" id="mobileMenu">
-      <li><a href="#">{{_ "nav.home" }}</a></li>
+      <li><a href="/">{{_ "nav.home" }}</a></li>
       <li><a href="#">{{_ "nav.breakdowns" }}</a></li>
-      <li><a href="#">{{_ "nav.users" }}</a></li>
       <li><a href="#">{{_ "nav.workOrders" }}</a></li>
+      <div class="divider"></div>
+      <li><a href="#!">Profile</a></li>
+      <li><a href="#!">Manage Users</a></li>
+      <li class="divider"></li>
+      <li><a href="/logout">Logout {{ username }}</a></li>
     </ul>
   </div>
 
