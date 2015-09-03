@@ -20,7 +20,8 @@
   "breakdowns": {
     "machineId": "Machine ID",
     "description": "Description",
-    "state": "Machine State:",
-    "create": "Create"
+    "state": "Machine State",
+    "create": "Create",
+    "edit": "Edit"
   }
 }
