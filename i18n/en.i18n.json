@@ -22,6 +22,7 @@
     "description": "Description",
     "state": "Machine State",
     "create": "Create",
-    "edit": "Edit"
+    "edit": "Edit",
+    "save": "Save"
   }
 }

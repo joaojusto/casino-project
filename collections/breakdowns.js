@@ -1,17 +1,50 @@
 Breakdowns = new Mongo.Collection('breakdowns');
 
 Meteor.methods({
-  newBreakdown: create
+  newBreakdown: create,
+  editBreakdown: edit,
 });
 
-function create(breakdown) {
-  Breakdowns.insert(breakdown, onError);
+function create(breakdown, callback) {
+  Breakdowns.insert(breakdown, callback);
 }
 
-function onError(error) {
-  if (error && Meteor.isClient)
-    Materialize.toast('Something went wrong while creating a new breakdown', 2000);
+function edit(breakdown, id, callback) {
+  Breakdowns.update(id, {$set: breakdown}, callback);
+}
 
-  if (!error && Meteor.isClient)
-    Materialize.toast('Breakdown created sucessfully', 2000);
+Breakdowns.helpers = {
+  createBreakdown: createBreakdown,
+  editBreakdown: editBreakdown
+};
+
+function createBreakdown(breakdown, callback) {
+  if (invalidBreakdown(breakdown, callback))
+    return;
+
+  Meteor.call('newBreakdown', breakdown, callback);
+}
+
+function editBreakdown(breakdown, id, callback) {
+  if (invalidBreakdown(breakdown, callback))
+    return;
+
+  Meteor.call('editBreakdown', breakdown, id, callback);
+}
+
+function invalidBreakdown(breakdown, callback) {
+  var error = { name: []};
+
+  if (breakdown.machineId && breakdown.description)
+    return false;
+
+  if (!breakdown.machineId)
+    error.name.push('Missing machine ID');
+
+  if (!breakdown.description)
+    error.name.push('Missing description');
+
+  callback(error);
+
+  return true;
 }

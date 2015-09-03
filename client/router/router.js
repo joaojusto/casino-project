@@ -38,6 +38,13 @@ Router.map(function setUpRoutes() {
     path: '/breakdowns/new'
   });
 
+  this.route('edit_breakdown', {
+    path: '/breakdowns/:id',
+    data: function() {
+      return Breakdowns.findOne({_id: this.params.id});
+    }
+  });
+
   this.route('new_workOrder', {
     path: '/workorders/new'
   });

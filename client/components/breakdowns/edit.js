@@ -1,5 +1,5 @@
-Template.newBreakdown.events = {
-  'click #create': function(event) {
+Template.editBreakdown.events = {
+  'click #save': function(event) {
     event.preventDefault();
 
     var breakdown = {
@@ -8,7 +8,7 @@ Template.newBreakdown.events = {
       description: $('#description').val()
     };
 
-    Breakdowns.helpers.createBreakdown(breakdown, onSuccess);
+    Breakdowns.helpers.editBreakdown(breakdown, this._id, onSuccess);
   }
 };
 
@@ -16,7 +16,7 @@ function onSuccess(error) {
   if (error)
     return handleError(error);
 
-  makeToast('Breakdown created sucessfully');
+  makeToast('Breakdown saved sucessfully');
   Router.go('home');
 }
 
