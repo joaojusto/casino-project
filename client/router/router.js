@@ -48,4 +48,19 @@ Router.map(function setUpRoutes() {
   this.route('new_workOrder', {
     path: '/workorders/new'
   });
+
+  this.route('users', {
+    path: '/users'
+  });
+
+  this.route('new_user', {
+    path: '/users/new'
+  });
+
+  this.route('edit_user', {
+    path: '/users/:id',
+    data: function() {
+      return Meteor.users.findOne({_id: this.params.id});
+    }
+  });
 });

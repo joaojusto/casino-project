@@ -1,37 +1,9 @@
 <template name="newBreakdown">
-  <div class="row">
-    <form id="breakdown" class="card col s12 m12 l6 offset-l3 hoverable">
-      <div class="card-content">
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="machine" type="text" name="machineId" class="validate">
-            <label for="machine">{{_ "breakdowns.machineId"}}</label>
-          </div>
-        </div>
+  <form id="breakdown" class="card col s12 m12 l6 offset-l3 hoverable">
+    {{> breakdownForm}}
 
-        <div class="row">
-          <div class="input-field col s12">
-            <textarea id="description" name="description" class="materialize-textarea"></textarea>
-            <label for="description">{{_ "breakdowns.description"}}</label>
-          </div>
-        </div>
-
-        <div class="row">
-          <div class="switch col s12">
-            <span class="grey-text">{{_ "breakdowns.state"}}:</span>
-            <label>
-              Off
-              <input id="state" name="state" type="checkbox">
-              <span class="lever"></span>
-              On
-            </label>
-          </div>
-        </div>
-      </div>
-
-      <div class="card-action row ">
-        <a class="waves-effect waves-light btn white-text" id="create">{{_ "breakdowns.create"}}</a>
-      </div>
-    </form>
-  </div>
+    <div class="card-action row">
+      <a class="waves-effect waves-light btn white-text" id="create">{{_ "breakdowns.create"}}</a>
+    </div>
+  </form>
 </template>

@@ -1,0 +1,12 @@
+<template name="user">
+  <div class="card hoverable">
+    <div class="card-content">
+      <p>username: {{username}}</p>
+      <p>fullname: {{fullname}}</p>
+      <p>role: {{role}}</p>
+    </div>
+    <div class="card-action ">
+      <a class="waves-effect waves-light btn white-text" id="edit" href="/users/{{_id}}">Edit</a>
+    </div>
+  </div>
+</template>

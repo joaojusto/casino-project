@@ -1,0 +1,16 @@
+<template name="userForm">
+  <div class="card-content row">
+    <div class="input-field col s12">
+      <input id="username" type="text" class="validate  {{isValid value=username}}" value="{{username}}">
+      <label class="{{isActive value=username}}" for="username">user name</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="password" type="password" class="validate  {{isValid value=password}}" value="{{password}}">
+      <label class="{{isActive value=password}}" for="password">password</label>
+    </div>
+    <div class="input-field col s12">
+      <input id="fullname" type="text" class="validate  {{isValid value=fullname}}" value="{{fullname}}">
+      <label class="{{isActive value=fullname}}" for="fullname">Full name</label>
+    </div>
+  </div>
+</template>

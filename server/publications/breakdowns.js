@@ -1,4 +1,4 @@
-Meteor.publish("breakdowns", function() {
+Meteor.publish('breakdowns', function() {
   if (isAdmin(this.userId))
     return Breakdowns.find();
   else
