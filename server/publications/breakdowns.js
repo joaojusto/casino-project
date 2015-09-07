@@ -6,6 +6,9 @@ Meteor.publish('breakdowns', function() {
 });
 
 function isAdmin(userId) {
+  if (!userId)
+    return false;
+
   return currentUser(userId).username === 'admin';
 }
 
