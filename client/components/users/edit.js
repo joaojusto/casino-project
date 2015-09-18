@@ -2,13 +2,25 @@ Template.editUser.events = {
   'click #save': function(event) {
     event.preventDefault();
 
-    console.log(this);
-    saveUser();
+    saveUser(this._id, {
+      username: this.username,
+      fullname: this.fullname,
+      profile: this.profile,
+      emails: this.emails
+    });
   }
 };
 
-function saveUser() {
-  var user = {
-    username: ""
-  };
+function saveUser(id, user) {
+  user.username = $('#username').val();
+  user.fullname = $('#fullname').val();
+
+  Meteor.call('updateUser', Meteor.userId(), id, user, onSuccess);
+}
+
+function onSuccess(error) {
+  if (error)
+    Materialize.toast(error, 2000);
+  else
+    Materialize.toast('Update success', 2000);
 }
