@@ -1,8 +1,8 @@
 Template.breakdown.events = {
-  'click #delete': function(event) {
+  'click #delete': function(event, template) {
     event.preventDefault();
 
-    Breakdowns.helpers.removeBreakdown(this._id, onSuccess);
+    Breakdowns.helpers.removeBreakdown(template.data._id, onSuccess);
   }
 };
 
