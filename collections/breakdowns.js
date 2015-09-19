@@ -3,6 +3,7 @@ Breakdowns = new Mongo.Collection('breakdowns');
 Meteor.methods({
   newBreakdown: create,
   editBreakdown: edit,
+  removeBreakdown: remove
 });
 
 function create(breakdown, callback) {
@@ -13,9 +14,14 @@ function edit(breakdown, id, callback) {
   Breakdowns.update(id, {$set: breakdown}, callback);
 }
 
+function remove(breakdownId, callback) {
+  Breakdowns.remove({_id: breakdownId}, callback);
+}
+
 Breakdowns.helpers = {
   createBreakdown: createBreakdown,
-  editBreakdown: editBreakdown
+  editBreakdown: editBreakdown,
+  removeBreakdown: removeBreakdown
 };
 
 function createBreakdown(breakdown, callback) {
@@ -30,6 +36,10 @@ function editBreakdown(breakdown, id, callback) {
     return;
 
   Meteor.call('editBreakdown', breakdown, id, callback);
+}
+
+function removeBreakdown(id, callback) {
+  Meteor.call('removeBreakdown', id, callback);
 }
 
 function invalidBreakdown(breakdown, callback) {

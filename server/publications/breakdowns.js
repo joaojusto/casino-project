@@ -1,5 +1,5 @@
-Meteor.publish('breakdowns', function() {
-  if (isAdmin(this.userId))
+Meteor.publish('breakdowns', function(userId) {
+  if (isAdmin(userId))
     return Breakdowns.find();
   else
     return Breakdowns.find({ author: this.userId });

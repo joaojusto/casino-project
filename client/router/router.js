@@ -31,7 +31,10 @@ Router.map(function setUpRoutes() {
   });
 
   this.route('home', {
-    path: '/'
+    path: '/',
+    subscriptions: function() {
+      Meteor.subscribe('breakdowns', Meteor.userId())
+    }
   });
 
   this.route('new_breakdown', {
