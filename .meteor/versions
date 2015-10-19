@@ -15,6 +15,10 @@ ddp@1.1.0
 deps@1.0.7
 ejson@1.0.6
 email@1.0.6
+etags:breakdowns@0.0.1
+etags:core@0.0.1
+etags:toast@0.0.1
+etags:users@0.0.1
 fastclick@1.0.3
 fourseven:scss@3.2.0
 geojson-utils@1.0.3

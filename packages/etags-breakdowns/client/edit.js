@@ -1,5 +1,5 @@
-Template.newBreakdown.events = {
-  'click #create': function(event) {
+Template.editBreakdown.events = {
+  'click #save': function(event) {
     event.preventDefault();
 
     var breakdown = {
@@ -8,7 +8,7 @@ Template.newBreakdown.events = {
       description: $('#description').val()
     };
 
-    Breakdowns.helpers.createBreakdown(breakdown, onSuccess);
+    Meteor.call('editBreakdown', breakdown, this._id, onSuccess);
   }
 };
 
@@ -16,7 +16,7 @@ function onSuccess(error) {
   if (error)
     return handleError(error);
 
-  makeToast('Breakdown created sucessfully');
+  Toast.makeToast('Breakdown saved sucessfully');
   Router.go('home');
 }
 
@@ -24,9 +24,5 @@ function handleError(error) {
   if (error.name.length)
     error.name.forEach(makeToast);
   else
-    makeToast('Something went wrong while updating this breakdown');
-}
-
-function makeToast(string) {
-  Materialize.toast(string, 2000);
+    Toast.makeToast('Something went wrong while updating this breakdown');
 }

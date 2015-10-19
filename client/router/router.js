@@ -33,7 +33,7 @@ Router.map(function setUpRoutes() {
   this.route('home', {
     path: '/',
     subscriptions: function() {
-      Meteor.subscribe('breakdowns', Meteor.userId())
+      Meteor.subscribe('breakdowns');
     }
   });
 
@@ -43,6 +43,9 @@ Router.map(function setUpRoutes() {
 
   this.route('edit_breakdown', {
     path: '/breakdowns/:id',
+    subscriptions: function() {
+      Meteor.subscribe('breakdowns');
+    },
     data: function() {
       return Breakdowns.findOne({_id: this.params.id});
     }

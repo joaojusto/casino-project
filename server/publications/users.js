@@ -1,8 +1,8 @@
-Meteor.publish('userData', function(userId) {
-  if (!userId)
+Meteor.publish('userData', function() {
+  if (!this.userId)
     return;
 
-  if (isAdmin(userId))
+  if (isAdmin(this.userId))
     return Meteor.users.find();
   else
     return Meteor.users.find({ _id: userId }, { fields: { 'fullname': 1} });
