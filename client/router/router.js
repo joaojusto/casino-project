@@ -33,6 +33,7 @@ Router.map(function setUpRoutes() {
   this.route('home', {
     path: '/',
     subscriptions: function() {
+      Meteor.subscribe('userData');
       Meteor.subscribe('breakdowns');
     }
   });
@@ -56,15 +57,24 @@ Router.map(function setUpRoutes() {
   });
 
   this.route('users', {
-    path: '/users'
+    path: '/users',
+    subscriptions: function() {
+      Meteor.subscribe('userData');
+    }
   });
 
   this.route('new_user', {
-    path: '/users/new'
+    path: '/users/new',
+    subscriptions: function() {
+      Meteor.subscribe('userData');
+    }
   });
 
   this.route('edit_user', {
     path: '/users/:id',
+    subscriptions: function() {
+      Meteor.subscribe('userData');
+    },
     data: function() {
       return Meteor.users.findOne({_id: this.params.id});
     }

@@ -1,6 +1,8 @@
 Template.nav.onRendered(onRendered);
 
 Template.nav.helpers({
+  userId: Meteor.userId,
+
   username: function() {
     if (Meteor.user())
       return Meteor.user().username;

@@ -20,7 +20,7 @@ function saveUser(id, user) {
 
 function onSuccess(error) {
   if (error)
-    Materialize.toast(error, 2000);
+    Toast.makeToast(error);
   else
-    Materialize.toast('Update success', 2000);
+    Toast.makeToast('Update success');
 }
