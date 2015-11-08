@@ -16,7 +16,8 @@ Package.onUse(function(api) {
     'tap:i18n',
     'etags:breakdowns',
     'etags:users',
-    'etags:toast'
+    'etags:toast',
+    'etags:work-orders'
   ];
 
   api.use(packages);

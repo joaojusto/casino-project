@@ -8,16 +8,18 @@ Package.onUse(function(api) {
   api.versionsFrom('1.1.0.3')
   api.use('templating', 'client');
 
-  api.addFiles('client/breakdown.html', 'client');
-  api.addFiles('client/breakdown.js', 'client');
-  api.addFiles('client/breakdowns.html', 'client');
-  api.addFiles('client/edit.html', 'client');
-  api.addFiles('client/edit.js', 'client');
-  api.addFiles('client/form.html', 'client');
-  api.addFiles('client/form.js', 'client');
-  api.addFiles('client/list.html', 'client');
-  api.addFiles('client/list.js', 'client');
-  api.addFiles('client/new.html', 'client');
-  api.addFiles('client/new.js', 'client');
+  api.addFiles([
+    'client/breakdown.html',
+    'client/breakdown.js',
+    'client/breakdowns.html',
+    'client/edit.html',
+    'client/edit.js',
+    'client/form.html',
+    'client/form.js',
+    'client/list.html',
+    'client/list.js',
+    'client/new.html',
+    'client/new.js',
+  ], 'client');
   api.addFiles('lib.js', 'server');
 });

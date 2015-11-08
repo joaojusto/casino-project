@@ -8,7 +8,7 @@ Template.newBreakdown.events = {
       description: $('#description').val()
     };
 
-    Meteor.call('newBreakdown', breakdown, onSuccess);
+    Meteor.call('breakdown:new', breakdown, onSuccess);
   }
 };
 

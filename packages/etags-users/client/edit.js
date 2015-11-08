@@ -15,7 +15,7 @@ function saveUser(id, user) {
   user.username = $('#username').val();
   user.fullname = $('#fullname').val();
 
-  Meteor.call('updateUser', Meteor.userId(), id, user, onSuccess);
+  Meteor.call('user:update', Meteor.userId(), id, user, onSuccess);
 }
 
 function onSuccess(error) {

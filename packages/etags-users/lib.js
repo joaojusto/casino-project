@@ -1,5 +1,5 @@
 Meteor.methods({
-  updateUser: update
+  'user:update': update
 });
 
 function update(userId, targetId, user, callback) {

@@ -8,7 +8,7 @@ Template.editBreakdown.events = {
       description: $('#description').val()
     };
 
-    Meteor.call('editBreakdown', breakdown, this._id, onSuccess);
+    Meteor.call('breakdown:edit', breakdown, this._id, onSuccess);
   }
 };
 

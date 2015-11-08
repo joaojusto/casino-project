@@ -2,7 +2,7 @@ Template.breakdown.events = {
   'click #delete': function(event, template) {
     event.preventDefault();
 
-    Meteor.call('removeBreakdown', template.data._id, onSuccess);
+    Meteor.call('breakdown:remove', template.data._id, onSuccess);
   }
 };
 

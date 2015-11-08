@@ -1,7 +1,7 @@
 Meteor.methods({
-  newBreakdown: create,
-  editBreakdown: edit,
-  removeBreakdown: remove
+  'breakdown:new': create,
+  'breakdown:edit': edit,
+  'breakdown:remove': remove
 });
 
 function create(breakdown, callback) {
