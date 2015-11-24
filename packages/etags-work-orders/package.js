@@ -10,6 +10,8 @@ Package.onUse(function(api) {
 
   api.addFiles([
     'client/work_orders.html',
+    'client/list.html',
+    'client/work_order.html',
   ], 'client');
   api.addFiles('lib.js', 'server');
 });

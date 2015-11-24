@@ -1,7 +1,9 @@
 <template name="workOrders">
-  <div class="row">
-    <div clasS="col s12">
-      work orders
+  {{#if Template.subscriptionsReady}}
+    <div class="row">
+      <div clasS="col s12">
+        {{> workOrdersList}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </template>

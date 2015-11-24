@@ -1,0 +1,13 @@
+<template name="workOrder">
+  <div class="card hoverable">
+    <div class="card-content">
+      <p>{{_ "workOrders.machineId"}}: {{machineId}}</p>
+      <p>{{_ "workOrders.description"}}: {{description}}</p>
+      <p>{{_ "workOrders.state"}}: {{state}}</p>
+    </div>
+    <div class="card-action ">
+      <a class="waves-effect waves-light btn white-text" id="edit" href="/workOrders/{{_id}}">Edit</a>
+      <a class="waves-effect waves-light btn white-text red" id="delete">Delete</a>
+    </div>
+  </div>
+</template>

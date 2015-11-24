@@ -1,5 +1,5 @@
 Template.breakdownList.helpers({
   breakdowns: function() {
-    return Breakdowns.find().fetch();
+    return Breakdowns.find();
   }
 });

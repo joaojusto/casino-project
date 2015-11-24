@@ -1,7 +1,9 @@
 <template name="breakdowns">
-  <div class="row">
-    <div clasS="col s12">
-      {{> breakdownList}}
+  {{#if Template.subscriptionsReady}}
+    <div class="row">
+      <div clasS="col s12">
+        {{> breakdownList}}
+      </div>
     </div>
-  </div>
+  {{/if}}
 </template>
